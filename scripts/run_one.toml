@@ -1,0 +1,25 @@
+pwd="Genousw4036xx#"
+
+global_configs="--threads=10 --round_payload=64 --round_up=true --use_nic_idx=1 --remote_nic_idx=1 --random=true --cross_dimm=true --payload=16  --coros=8 --addr='r740:6666' --add_sync=false --address_space=5 --use_read=false --undefok=use_read,address_space,coros,window_sz,payload,add_sync,cross_dimm,random,use_nic_idx,round_up,threads,addr,remote_nic_idx,round_payload,threads"
+
+[[pass]]
+host = "r740"
+path = '~/projects/librdpma'
+cmd  = 'sudo ./scripts/nvm_server --host=localhost  --port=6666 -use_nvm=true -touch_mem=false --nvm_sz=10 --nvm_file=/dev/dax0.1 --numa_node=1'
+## avaliable use cases: /dev/dax0.1 | /dev/dax1.3
+
+[[pass]]
+host = "val14"
+path = '/cock/librdpma'
+cmd  = './scripts/nvm_client -addr="r740:6666" --coros=8  --id=0 --use_nic_idx=1 --use_read=false --payload=64 --add_sync=false --address_space=2 --random=true'
+
+[[pass]]
+host = "val15"
+path = '/cock/librdpma'
+cmd  = './scripts/nvm_client -addr="r740:6666" --coros=8  --id=1 --use_nic_idx=1 --use_read=false --payload=64 --add_sync=false --address_space=2 --random=true'
+
+[[pass]]
+host = "val12"
+path = '/cock/librdpma'
+cmd  = './scripts/nvm_client -addr="r740:6666" --coros=8  --id=2 --use_nic_idx=1 --use_read=false --payload=64 --add_sync=false --address_space=2 --random=true'
+
