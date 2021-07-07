@@ -1,0 +1,3 @@
+#include "../../nvm_region.hh"
+
+using namespace nvm;
