@@ -1,6 +1,6 @@
 #pragma once
 
-#if __cplusplus > 201402L
+#if __cplusplus > 201402L && defined(_HAS_CXX17)
 #include <optional>
 #else
 /**
@@ -14,7 +14,7 @@
 #endif
 
 namespace rdmaio {
-#if __cplusplus > 201402L
+#if __cplusplus > 201402L && defined(_HAS_CXX17)
 template<typename T>
 using Option = std::optional<T>;
 #else
