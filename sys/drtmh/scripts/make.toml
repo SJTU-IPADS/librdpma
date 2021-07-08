@@ -1,0 +1,11 @@
+[[pass]]
+host = "r740"
+path = '~/projects/rocc_nvm'
+cmd  = 'cmake . -DTX_LOG_STYLE=2 -DRDMA_CACHE=1 -DONE_SIDED_READ=1 -DPA=1 -DRDMA_STORE_SIZE=8192; make nvm_server; make nvm_client;make nvm_tserver; make nvm_rrtserver;make nvm_hello;make noccocc -j12;'
+
+[[pass]]
+host = "val19"
+path = '~/projects/rocc_nvm'
+cmd  = 'cmake .  -DTX_LOG_STYLE=2 -DRDMA_CACHE=1 -DONE_SIDED_READ=1 -DPA=1 -DRDMA_STORE_SIZE=8192; make nvm_client; make nvm_tclient; make nvm_rrtclient; make noccocc -j12; make nvm_bandwidth; make nvm_server;'
+
+

@@ -1,0 +1,32 @@
+#[[sync]]
+#source = "wxd@val19:~/projects/rocc_nvm/scripts/nvm_client"
+#targets = ["wxd@val21:~/projects/rocc_nvm/scripts/"]
+
+user = "weixingda"
+pwd  = "genousw4036"
+
+[[pass]]
+host = "localhost"
+path = '/Users/weixingda/lab/rocc/scripts'
+cmd  = './sync_to_client.sh val19'
+local = "yes"
+
+[[pass]]
+host = "localhost"
+path = '/Users/weixingda/lab/rocc/scripts'
+cmd  = './sync_to_client.sh r740'
+local = "yes"
+
+
+
+[[pass]]
+host = "localhost"
+path = '/Users/weixingda/lab/rocc/scripts'
+cmd  = './sync_to_client.sh val01'
+local = "yes"
+
+
+
+
+
+

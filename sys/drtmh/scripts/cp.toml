@@ -1,0 +1,4 @@
+[[pass]]
+host = "val19"
+path = '~/projects/rocc_nvm'
+cmd  = 'cd scripts; ./cp.sh'

@@ -1,0 +1,36 @@
+global_configs = "--coros=8 --use_read=true --round_payload=64 --clflush=false --payload=1024 --round_up=false --window_sz=1 --undefok=window_sz,round_up,payload,clflush,round_payload,use_read,coros"
+
+## RPC's perf
+[[pass]]
+host = "r740"
+path = '~/projects/rocc_nvm/scripts/'
+cmd  = 'export MLX5_SINGLE_THREADED=1; sudo ./nvm_rrtserver --port=7777 -use_nvm=false --threads=10 --nvm_sz=10 --clflush=false --nvm_file=/dev/dax1.3 --non_null=false'
+
+[[pass]]                                                                                                  
+host = "val19"
+path = '~/projects/rocc_nvm/scripts/'
+cmd  = 'sleep 1; export MLX5_SINGLE_THREADED=1; ./nvm_rrtclient -addr="r740:7777" --threads=10 --coros=8 --id=1 --use_nic_idx=1 --payload=64 -use_read=false --window_sz=1 -address_space=2 --random=true' #
+
+[[pass]]                                                                                                  
+host = "val21"
+path = ''
+cmd  = 'sleep 1; export MLX5_SINGLE_THREADED=1; ./nvm_rrtclient -addr="r740:7777" --threads=10 --coros=8 --id=2 --use_nic_idx=1 --payload=64 -use_read=false --window_sz=1 -address_space=2 --random=true' #
+
+[[pass]]                                                                                                  
+host = "val23"
+path = ''
+cmd  = 'sleep 1; export MLX5_SINGLE_THREADED=1; ./nvm_rrtclient -addr="r740:7777" --threads=10 --coros=8 --id=3 --use_nic_idx=1 --payload=64 -use_read=false --window_sz=1 -address_space=2 --random=true' #
+
+
+[[pass]]                                                                                                  
+host = "val20"
+path = ''
+cmd  = 'sleep 1; export MLX5_SINGLE_THREADED=1; ./nvm_rrtclient -addr="r740:7777" --threads=10 --coros=8 --id=4 --use_nic_idx=1 --payload=64 -use_read=false --window_sz=1 -address_space=2 --random=true' #
+
+
+[[pass]]                                                                                                  
+host = "val22"
+path = ''
+cmd  = 'sleep 1; export MLX5_SINGLE_THREADED=1; ./nvm_rrtclient -addr="r740:7777" --threads=10 --coros=8 --id=5 --use_nic_idx=1 --payload=64 -use_read=false --window_sz=1 -address_space=2 --random=true' #
+
+

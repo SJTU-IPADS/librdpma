@@ -1,0 +1,31 @@
+[[pass]]
+host = "val19"
+path = '~/projects/rocc_nvm'
+cmd  = 'pkill nvm_client; pkill nvm_bandwith; pkill nvm_rrtclient; pkill noccocc; pkill nvm_rrtclient; pkill co_client; pkill nvm_server;'
+
+[[pass]]
+host = "val21"
+path = '~/projects/rocc_nvm'
+cmd  = 'pkill nvm_client; pkill nvm_tclient; pkill noccocc; pkill nvm_rrtclient;  pkill co_client;'
+
+[[pass]]
+host = "val22"
+path = '~/projects/rocc_nvm'
+cmd  = 'pkill nvm_client; pkill nvm_tclient; pkill noccocc; pkill nvm_rrtclient;  pkill co_client;'
+
+[[pass]]
+host = "val23"
+path = ''
+cmd  = 'pkill nvm_client; pkill nvm_tclient; pkill noccocc; pkill nvm_rrtclient;  pkill co_client;'
+
+[[pass]]
+host = "val20"
+path = ''
+cmd  = 'pkill nvm_client; pkill nvm_tclient; pkill noccocc; pkill nvm_rrtclient;  pkill co_client;'
+
+
+
+[[pass]]
+host = "r740"
+path = '~/projects/rocc_nvm'
+cmd  = 'sudo pkill nvm_server; sudo pkill nvm_rrtserver; sudo pkill nvm_tserver; sudo pkill noccocc;'

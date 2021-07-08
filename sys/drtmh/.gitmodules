@@ -1,0 +1,15 @@
+[submodule "third_party/cpuinfo"]
+	path = third_party/cpuinfo
+	url = https://github.com/pytorch/cpuinfo.git
+[submodule "third_party/gflags"]
+	path = third_party/gflags
+	url = https://github.com/gflags/gflags.git
+[submodule "third_party/rib"]
+	path = third_party/rib
+	url = https://ipads.se.sjtu.edu.cn:1312/weixd/rib.git
+[submodule "third_party/r2"]
+	path = third_party/r2
+	url = https://github.com/wxdwfc/r2.git
+[submodule "third_party/rlib"]
+	path = third_party/rlib
+	url = https://github.com/wxdwfc/rlibv2.git

@@ -1,0 +1,29 @@
+[[sync]]
+source = "wxd@val20:~/projects/octopus/mpibw"
+targets = ["wxd@val20:~/temp", "wxd@val19:~/temp", "wxd@val21:~/temp", "wxd@val22:~/temp"]
+
+[[sync]]
+source = "wxd@r740:~/projects/octopus-rdma-nvm/conf.xml"
+targets = ["wxd@val20:~", "wxd@val19:~", "wxd@val21:~", "wxd@val22:~"]
+
+[[pass]]
+host = "r740"
+path = '~/projects/octopus/build'
+cmd  = 'sudo su -c "export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$PWD/octopus/deps/install/lib; ./dmfs" '
+
+[[pass]]                                                                                                  
+host = "val19"
+path = 'temp'
+cmd  = 'export PATH=/home/wxd/octopus/deps/install/bin:$PATH; export LD_LIBRARY_PATH=/home/wxd/octopus/deps/install/lib:$LD_LIBRARY_PATH; mpiexec -n 5 ./mpibw 1024 100000'
+
+[[pass]]
+host = "r740"
+path = '~/projects/rocc_nvm'
+cmd  = 'sudo ./scripts/nvm_server --host=localhost  --port=6666 -use_nvm=true -touch_mem=false --nvm_sz=10 --nvm_file=/dev/dax0.1 --numa_node=1'
+
+
+
+
+
+
+

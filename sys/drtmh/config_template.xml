@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<bench>
+  <rep_factor> 0 </rep_factor>
+  <scale>   1 </scale>
+  <servers>
+    <mapping>
+    </mapping>
+  </servers>
+  <exe> noccrad </exe>
+  <bank>
+    <sp> 25 </sp>
+    <dc> 15 </dc>
+    <payment> 15 </payment>
+    <ts> 15 </ts>
+    <wc> 15 </wc> 
+    <aml> 15 </aml>
+  </bank>
+
+  <tpcc>
+    <new>45</new>
+    <pay>43</pay>
+    <del>4</del>
+    <stock>4</stock>
+    <order>4</order>
+  </tpcc>
+    <tpce>
+    <cp>13</cp>
+    <to>10</to>
+    <tr>10</tr>
+    <sd>14</sd>
+    <tl>8 </tl>
+    <ts>19</ts>
+    <bv>5 </bv>
+    <mf>1 </mf>
+    <mw>18</mw>
+    <tu>2 </tu>
+  </tpce>
+  <micro> 21 </micro>
+</bench>

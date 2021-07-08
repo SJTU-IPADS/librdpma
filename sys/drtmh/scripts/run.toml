@@ -1,0 +1,56 @@
+#[[sync]]
+#source = "wxd@val19:~/projects/rocc_nvm/scripts/nvm_client"
+#targets = ["wxd@val19:~","wxd@val21:~","wxd@val22:~"]
+global_configs="--round_payload=64 --round_up=false --use_nic_idx=1 --remote_nic_idx=1 --random=true --cross_dimm=true --payload=64 --threads=10 --coros=8 --addr='r740:6666' --add_sync=false --address_space=5 --use_read=true --undefok=use_read,address_space,coros,window_sz,payload,add_sync,cross_dimm,random,use_nic_idx,round_up,threads,addr,remote_nic_idx,round_payload"
+
+[[pass]]
+host = "r740"
+path = '~/projects/rocc_nvm'
+cmd  = 'sudo ./scripts/nvm_server --host=localhost  --port=6666 -use_nvm=false -touch_mem=false --nvm_sz=10 --nvm_file=/dev/dax0.1 --numa_node=1'
+## avaliable use cases: /dev/dax0.1 | /dev/dax1.3
+
+[[pass]]
+host = "val19"
+path = '~/projects/rocc_nvm/scripts'
+cmd  = 'sleep 10; ./nvm_client -addr="r740:6666" --coros=8 --threads=20 --id=0 --use_nic_idx=1 --use_read=true --payload=64 --add_sync=false --address_space=2 --random=true'
+
+[[pass]]
+host = "val21"
+path = ''
+cmd  = 'sleep 5;./nvm_client -addr="r740:6666" --coros=8 --threads=20 --id=1 --use_nic_idx=1 --use_read=true --payload=64 --add_sync=false --address_space=2 --random=true'
+
+[[pass]]
+host = "val22"
+path = ''
+cmd  = 'sleep 5; ./nvm_client -addr="r740:6666" --coros=8 --threads=20 --id=2 --use_nic_idx=1 --use_read=true --payload=64 --add_sync=false --address_space=2 --random=true'
+
+[[pass]]
+host = "val23"
+path = ''
+cmd  = 'sleep 5; ./nvm_client -addr="r740:6666" --coros=8 --threads=20 --id=3 --use_nic_idx=1 --use_read=true --payload=64 --add_sync=false --address_space=2 --random=true'
+
+
+
+
+###########################################################################################################
+# [[pass]]                                                                                                #
+# host = "val20"                                                                                          #
+# path = ''                                                                                               #
+# cmd  = './nvm_client -addr="r740:6666" --threads=24 --id=1 --use_nic_idx=1 --use_read=true --payload=8' #
+###########################################################################################################
+
+
+#########################################################################################
+# [[pass]]                                                                              #
+# host = "val19"                                                                        #
+# path = '~/'                                                                           #
+# cmd  = './nvm_aclient -addr="r740:6666" --threads=12 --id=0 --use_nic_idx=1'          #
+#                                                                                       #
+#                                                                                       #
+# [[pass]]                                                                              #
+# host = "r740"                                                                         #
+# path = '~/projects/rocc_nvm'                                                          #
+# cmd  = './scripts/nvm_aclient -addr="val19:6666" --threads=12 --id=0 --use_nic_idx=1' #
+#########################################################################################
+
+

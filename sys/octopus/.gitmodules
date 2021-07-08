@@ -1,0 +1,6 @@
+[submodule "third_party/r2"]
+	path = third_party/r2
+	url = https://github.com/wxdwfc/r2.git
+[submodule "third_party/rlib"]
+	path = third_party/rlib
+	url = https://github.com/wxdwfc/rlibv2.git

@@ -1,0 +1,41 @@
+global_configs="-p 6 -t 10 --bench tpcc"
+
+[[pass]]
+host = "r740"
+path = '~/projects/rocc_nvm'
+cmd  = 'sudo ./scripts/noccocc  --txn-flags 1  --verbose --config config.xml --id 0 -t 10 -c 8 -r 1 -p 3'
+
+[[pass]]
+host = "val19"
+path = ''
+cmd  = './noccocc  --txn-flags 1  --verbose --config config.xml --id 1 -t 10 -c 8 -r 100 -p 3'
+
+
+[[pass]]
+host = "val20"
+path = ''
+cmd  = './noccocc  --txn-flags 1  --verbose --config config.xml --id 2 -t 10 -c 8 -r 100 -p 3'
+
+
+[[pass]]
+host = "val21"
+path = ''
+cmd  = './noccocc  --txn-flags 1  --verbose --config config.xml --id 3 -t 10 -c 8 -r 100 -p 3'
+
+[[pass]]
+host = "val22"
+path = ''
+cmd  = './noccocc  --txn-flags 1  --verbose --config config.xml --id 4 -t 10 -c 8 -r 100 -p 3'
+
+[[pass]]
+host = "val23"
+path = ''
+cmd  = './noccocc  --txn-flags 1  --verbose --config config.xml --id 5 -t 10 -c 8 -r 100 -p 3'
+
+
+
+
+
+
+
+

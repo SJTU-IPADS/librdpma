@@ -1,0 +1,34 @@
+[[sync]]
+source = "wxd@val20:~/projects/octopus/mpitest"
+targets = ["wxd@val20:~/temp", "wxd@val19:~/temp", "wxd@val21:~/temp", "wxd@val22:~/temp"]
+
+[[sync]]
+source = "wxd@val20:~/projects/octopus/mpibw"
+targets = ["wxd@val20:~/temp"]
+
+[[sync]]
+source = "wxd@r740:~/projects/octopus-rdma-nvm/conf.xml"
+targets = ["wxd@val20:~", "wxd@val19:~", "wxd@val21:~", "wxd@val22:~"]
+
+[[pass]]
+host = "r740"
+path = '~/projects/octopus/build'
+cmd  = 'sudo su -c "export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$PWD/octopus/deps/install/lib; ./dmfs" '
+
+[[pass]]                                                                                                  
+host = "val20"
+path = 'temp'
+cmd  = 'export LD_LIBRARY_PATH=/home/wxd/octopus/deps/install/lib:$LD_LIBRARY_PATH;   ./mpitest'
+
+[[pass]]                                                                                                  
+host = "val19"
+path = 'temp'
+cmd  = 'export LD_LIBRARY_PATH=/home/wxd/octopus/deps/install/lib:$LD_LIBRARY_PATH;   ./mpitest'
+
+[[pass]]                                                                                                  
+host = "val21"
+path = 'temp'
+cmd  = 'export LD_LIBRARY_PATH=/home/wxd/octopus/deps/install/lib:$LD_LIBRARY_PATH;   ./mpitest'
+
+
+

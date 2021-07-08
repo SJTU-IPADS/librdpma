@@ -1,0 +1,10 @@
+<hosts>
+  <!-- all reachable hosts -->
+  <macs>
+    <a> r740 </a>
+    <a> val19 </a>
+  </macs>
+  <black>
+  </black>
+  <!-- The macs which are ignored-->
+</hosts>

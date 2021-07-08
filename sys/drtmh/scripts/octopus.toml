@@ -1,0 +1,15 @@
+[[pass]]
+host = "r740"
+path = '~/projects/rocc_nvm'
+cmd  = 'sudo ./scripts/nvm_server --host=localhost  --port=8888 -use_nvm=false -touch_mem=false --nvm_sz=8 --nvm_file=/dev/dax1.3'
+
+[[pass]]
+host = "r740"
+path = '~/octopus'
+cmd  = 'sudo ./dmfs'
+
+
+[[pass]]
+host = "val20"
+path = '~/octopus'
+cmd  = 'sleep 1; /home/wxd/openmpi-install/bin/mpiexec -hostfile mpd.hosts -n 12 ./mpibw 64 100000'

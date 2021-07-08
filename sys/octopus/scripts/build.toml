@@ -1,0 +1,12 @@
+[[pass]]
+host = "r740"
+path = '~/projects/octopus/build'
+cmd = 'cmake .. ; make dmfs -j12;'
+
+[[pass]]
+host = "val20"
+path = '~/projects/octopus/'
+cmd = 'cmake . ; make mpitest -j12; make mpibw;'
+
+
+
